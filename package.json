@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "slugify": "^1.3.4",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
@@ -20,5 +21,17 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.5.21"
-  }
+  },
+  "description": "## Project setup ``` npm install ```",
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rezan83/vue-recipes.git"
+  },
+  "author": "Rezan Mohammad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rezan83/vue-recipes/issues"
+  },
+  "homepage": "https://github.com/rezan83/vue-recipes#readme"
 }

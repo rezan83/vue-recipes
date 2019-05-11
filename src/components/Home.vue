@@ -4,10 +4,10 @@
     <h2>{{ msg }}</h2>
   <div class="home container">
 
-    <div class="card"  v-for="(item, index) in recipes" :key="index">  
+    <div class="card"  v-for="item in recipes" :key="item.id">  
       <div class="card-content">
-        <i class="material-icons delete" @click="deleteRecipe(index)">delete</i>
-        <i class="material-icons edit">edit</i>
+        <i class="material-icons delete" @click="deleteRecipe(item.id)">delete</i>
+        <router-link :to="{ name: 'EditRecipes', params:{recipes_slug: item.slug} }"><i class="material-icons edit">edit</i></router-link>
         <h2 class="indigo-text">{{item.title}}</h2>
         <ul class="ingr">
           <li v-for="(ingr, index) in item.ingr" :key="index">
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import db from '@/firebase/init'
+  // import db from '@/firebase/init'
 export default {
   data: function() {
     return ({
@@ -36,10 +36,21 @@ export default {
     msg: String
   },
   methods: {
-    deleteRecipe(index){
-      console.log(index + ' index clicked')
-      this.recipes = this.recipes.filter(item => this.recipes.indexOf(item) !== index)
+    deleteRecipe(id){
+      db.collection("recipes").doc(id).delete().then(() => { 
+      this.recipes = this.recipes.filter(item => item.id !== id)
+      })
     }
+  },
+  created(){
+    db.collection("recipes").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        var recipe = doc.data();
+        recipe.id = doc.id
+        this.recipes.push(recipe);
+    });
+});
+
   }
 }
 </script>
