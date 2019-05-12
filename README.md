@@ -1,7 +1,8 @@
 # Vue Recipes
 
 ## Make your own Recipes!
-## Project build using vue.js, vue-cli3 for front end and firebase for the backe end
+###  Project build using vue.js, vue-cli3 for front end and firebase for the backe end
+###  https://recipes-1234.firebaseapp.com/
 
 ## Project setup
 ```
