@@ -12,7 +12,8 @@
       </div>
       <div class="row">
         <div class="input-field col m8 s12">
-          <input id="ingr" type="text" class="validate" v-model="ingr" @keydown.down="addIngr">
+          <input id="ingr" type="text" class="validate" v-model="ingr" @keydown.tab="addIngr">
+            <a @click.prevent="addIngr" class="btn-floating btn-small blue right"><i class="material-icons">add</i></a>
           <label for="ingr">Ingredient</label>
         </div>
 
