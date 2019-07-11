@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <About msg="This is the new About page" />
+    <About msg="Make and edit your own recipes" />
   </div>
 </template>
 <script>
